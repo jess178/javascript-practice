@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript practice</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <input class="numberInput" type="text">
+  <p></p>
+
+  <script>
+    let n = prompt("Pick a number.")
+    let m = prompt("Pick another number.")
+    
+    function add7(n) {
+      if (isNaN(n)) {
+        return ("Try again.");
+      }
+      else {return "Your first number + 7 = " + (+n+7)}
+    }
+
+    let resultAdd7 = add7(n);
+
+   
+    console.log(resultAdd7);
+    
+    function multiply(m, n) {
+      if (isNaN(n) || isNaN(m)) {
+        return ("One of your numbers is not a number. Try again.");
+      }
+      else {return "The product of your numbers is " + (n*m)};
+    }
+
+    console.log(multiply(m, n));
+
+    let userString = prompt("Insert sentence.");
+
+    function capitalize(string) {
+      let firstLetter = string.charAt(0);
+      let capitalFirstLetter = firstLetter.toUpperCase();
+      let restOfSentence = string.substring(1);
+      let lowerCaseRestOfSentence = restOfSentence.toLowerCase();
+      let capitalizedString = capitalFirstLetter.concat(lowerCaseRestOfSentence);
+      console.log(capitalizedString); 
+    }
+    
+    capitalize(userString.trimStart());
+
+    function lastLetter(string) {
+      let stringLastLetter = string.substr(-1);
+      console.log(stringLastLetter);
+    }
+
+    lastLetter(userString.trimEnd());
+
+  </script>
+</body>
+</html>
